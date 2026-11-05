@@ -1,14 +1,15 @@
 TITLE
-sku-snap — turn texted B2B orders into catalog SKUs
+sku-snap — texted orders to catalog SKUs | Built It. Bragging About It. Ep. 3
 
 DESCRIPTION
 "alb x3, salmon 10, half case lemons": sku-snap turns orders like that into catalog SKU lines, converts units, uses the customer's past orders to break ties, and flags only the lines a human needs to check, with the clarification message drafted. Offline Python CLI with a Claude skill.
 
+Episode 3 of "Built It. Bragging About It.": the problem (cinematic), then the solution (default).
 Code: https://github.com/AagamS06/sku-snap
 Independent student project; not affiliated with any company mentioned.
 
 TAGS
-yc-gap-project, order-management, food-distribution, wholesale, python, cli, sku-snap
+yc-gap-project, order-management, food-distribution, wholesale, python, cli, sku-snap, built it bragging about it
 
 CATEGORY
 Science & Technology
