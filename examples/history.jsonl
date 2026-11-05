@@ -1,0 +1,2 @@
+{"customer": "luigis", "date": "2026-10-23", "lines": [{"sku": "PRD-ROM-24", "qty": 2, "unit": "cs"}, {"sku": "SEA-SAL-ATL", "qty": 10, "unit": "lb"}, {"sku": "DRY-EGG-LG", "qty": 4, "unit": "dz"}]}
+{"customer": "luigis", "date": "2026-10-30", "lines": [{"sku": "PRD-ROM-24", "qty": 3, "unit": "cs"}, {"sku": "PRD-TOM-ROMA", "qty": 1, "unit": "cs"}, {"sku": "CHE-PARM-WHL", "qty": 5, "unit": "lb"}]}

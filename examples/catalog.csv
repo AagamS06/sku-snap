@@ -1,0 +1,14 @@
+sku,name,unit,pack_size,pack_unit,aliases,in_stock
+PRD-ROM-24,Romaine Hearts 24ct,cs,24,ea,romaine|romaine hearts|lechuga romana,yes
+PRD-LEM-115,Lemons 115ct,cs,115,ea,lemon|lemons|limones,yes
+PRD-ONY-JMB,Yellow Onions Jumbo,lb,,,yellow onion|onions|cebolla,yes
+PRD-TOM-ROMA,Roma Tomatoes 25lb,cs,25,lb,roma tomato|tomate roma|plum tomato,yes
+PRD-HRB-BAS,Basil Bunch,bunch,,,basil|albahaca,no
+DRY-EGG-LG,Large Eggs,dz,12,ea,eggs|egg|huevos,yes
+SEA-TUN-ALB,Albacore Tuna Loin,lb,,,albacore|tuna loin,yes
+SEA-SAL-ATL,Atlantic Salmon Fillet,lb,,,atlantic salmon,yes
+SEA-SAL-KNG,King Salmon Whole,lb,,,king salmon,yes
+SEA-SAL-SMK,Smoked Salmon Sliced 2lb,ea,,,smoked salmon|lox,yes
+CHE-PARM-WHL,Parmigiano Reggiano Wedge,lb,,,parmigiano,yes
+CHE-PARM-GRT,Parmesan Grated 5lb Bag,bag,5,lb,grated parmesan,yes
+OIL-EVOO-3L,Extra Virgin Olive Oil 3L Tin,ea,,,evoo|olive oil,yes
