@@ -28,10 +28,14 @@ sku-snap is that tool. It helps **order-desk reps at small and mid-size distribu
 
 ## Launch video
 
+**Built It. Bragging About It. · Ep. 3**: two clips that run as one episode.
+
 [![sku-snap launch video](docs/media/sku-snap-cover.jpg)](docs/media/sku-snap.mp4)
 
-- Launch video (21s, 1080p): [docs/media/sku-snap.mp4](docs/media/sku-snap.mp4). YouTube link coming soon.
-- Social cut with a rotate-your-phone intro: [docs/media/social-sku-snap.mp4](docs/media/social-sku-snap.mp4)
+- Full episode (31.5s, 1080p): [docs/media/sku-snap.mp4](docs/media/sku-snap.mp4)
+- Clip 1, the problem (13.5s, cinematic): [docs/media/sku-snap-clip1.mp4](docs/media/sku-snap-clip1.mp4)
+- Clip 2, the solution (18s): [docs/media/sku-snap-clip2.mp4](docs/media/sku-snap-clip2.mp4)
+- Social cut with a rotate-your-phone intro: [social-sku-snap.mp4 (release asset)](https://github.com/AagamS06/sku-snap/releases/download/v0.1.0/social-sku-snap.mp4)
 
 ## Tech stack
 
