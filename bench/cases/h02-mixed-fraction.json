@@ -1,0 +1,20 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "PRD-LEM-115",
+      "qty": 2.5,
+      "unit": "cs",
+      "flags": [
+        "SS009"
+      ]
+    },
+    {
+      "sku": "PRD-LIM-200",
+      "qty": 1,
+      "unit": "cs",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

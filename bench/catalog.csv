@@ -1,0 +1,34 @@
+sku,name,unit,pack_size,pack_unit,aliases,in_stock
+PRD-ROM-24,Romaine Hearts 24ct,cs,24,ea,romaine|romaine hearts|lechuga romana,yes
+PRD-ICE-24,Iceberg Lettuce 24ct,cs,24,ea,iceberg,yes
+PRD-LEM-115,Lemons 115ct,cs,115,ea,lemon|lemons|limones,yes
+PRD-LIM-200,Limes 200ct,cs,200,ea,lime|limes|limas,yes
+PRD-ONY-JMB,Yellow Onions Jumbo,lb,,,yellow onion|cebolla,yes
+PRD-ONR-25,Red Onions 25lb,cs,25,lb,red onion|cebolla morada,yes
+PRD-TOM-ROMA,Roma Tomatoes 25lb,cs,25,lb,roma tomato|tomate roma|plum tomato,yes
+PRD-TOM-CHR,Cherry Tomatoes 12pt,cs,12,ea,cherry tomato|cherry toms,yes
+PRD-POT-RUS,Russet Potatoes 50lb,bag,50,lb,russet|idaho potato|papas,yes
+PRD-CIL-30,Cilantro 30ct,cs,30,bunch,cilantro|coriander,yes
+PRD-HRB-BAS,Basil Bunch,bunch,,,basil|albahaca,no
+PRD-AVO-48,Hass Avocados 48ct,cs,48,ea,avocado|avo|aguacate,yes
+DRY-EGG-LG,Large Eggs,dz,12,ea,egg|eggs|huevos,yes
+DRY-FLR-50,All Purpose Flour 50lb,bag,50,lb,ap flour|flour|harina,yes
+DRY-RCE-JAS,Jasmine Rice 25lb,bag,25,lb,jasmine rice|rice,yes
+DRY-SUG-25,Granulated Sugar 25lb,bag,25,lb,sugar|azucar,yes
+SEA-TUN-ALB,Albacore Tuna Loin,lb,,,albacore|tuna loin,yes
+SEA-SAL-ATL,Atlantic Salmon Fillet,lb,,,atlantic salmon,yes
+SEA-SAL-KNG,King Salmon Whole,lb,,,king salmon,yes
+SEA-SAL-SMK,Smoked Salmon Sliced 2lb,ea,,,smoked salmon|lox,yes
+SEA-SHR-1620,Shrimp 16/20 Peeled,lb,,,shrimp|prawns|camarones,yes
+CHE-PARM-WHL,Parmigiano Reggiano Wedge,lb,,,parmigiano,yes
+CHE-PARM-GRT,Parmesan Grated 5lb Bag,bag,5,lb,grated parmesan,yes
+CHE-MOZ-FRS,Fresh Mozzarella Balls,lb,,,fresh mozz|bocconcini,yes
+CHE-MOZ-SHR,Shredded Mozzarella 5lb,bag,5,lb,shredded mozz|pizza cheese,yes
+DAI-BUT-UNS,Unsalted Butter 36lb,cs,36,lb,butter|unsalted butter|mantequilla,yes
+DAI-CRM-HVY,Heavy Cream Half Gallon,ea,,,heavy cream|cream,yes
+DAI-MLK-WHL,Whole Milk Gallon,gal,,,whole milk|milk|leche,yes
+OIL-EVOO-3L,Extra Virgin Olive Oil 3L Tin,ea,,,evoo|olive oil,yes
+OIL-CAN-35,Canola Fry Oil 35lb,ea,,,canola|fry oil|fryer oil,yes
+MEA-CHK-BRS,Chicken Breast Boneless,lb,,,chicken breast|pechuga,yes
+MEA-CHK-THG,Chicken Thigh Boneless,lb,,,chicken thigh|thighs,yes
+MEA-BEF-GRD,Ground Beef 80/20,lb,,,ground beef|mince|carne molida,no

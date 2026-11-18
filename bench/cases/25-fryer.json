@@ -1,0 +1,26 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "OIL-CAN-35",
+      "qty": 3,
+      "unit": "ea",
+      "flags": [
+        "SS012"
+      ]
+    },
+    {
+      "sku": "DAI-BUT-UNS",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "DAI-MLK-WHL",
+      "qty": 1,
+      "unit": "gal",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

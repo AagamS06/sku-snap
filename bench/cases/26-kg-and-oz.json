@@ -1,0 +1,22 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "SEA-SHR-1620",
+      "qty": 4.409,
+      "unit": "lb",
+      "flags": [
+        "SS005"
+      ]
+    },
+    {
+      "sku": "SEA-TUN-ALB",
+      "qty": 2,
+      "unit": "lb",
+      "flags": [
+        "SS005"
+      ]
+    }
+  ],
+  "ignored": 0
+}

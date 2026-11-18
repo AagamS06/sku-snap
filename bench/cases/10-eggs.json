@@ -1,0 +1,30 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "DRY-EGG-LG",
+      "qty": 4,
+      "unit": "dz",
+      "flags": []
+    },
+    {
+      "sku": "DRY-EGG-LG",
+      "qty": 120,
+      "unit": "dz",
+      "flags": [
+        "SS012",
+        "SS014",
+        "SS007"
+      ]
+    },
+    {
+      "sku": "DRY-EGG-LG",
+      "qty": 2,
+      "unit": "dz",
+      "flags": [
+        "SS007"
+      ]
+    }
+  ],
+  "ignored": 0
+}

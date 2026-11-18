@@ -1,0 +1,32 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "PRD-ROM-24",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "DRY-EGG-LG",
+      "qty": 1,
+      "unit": "dz",
+      "flags": []
+    },
+    {
+      "sku": "DRY-FLR-50",
+      "qty": 3,
+      "unit": "bag",
+      "flags": []
+    },
+    {
+      "sku": "PRD-LIM-200",
+      "qty": 0.5,
+      "unit": "cs",
+      "flags": [
+        "SS009"
+      ]
+    }
+  ],
+  "ignored": 0
+}

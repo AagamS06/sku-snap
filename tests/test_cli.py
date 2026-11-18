@@ -37,7 +37,8 @@ def test_bad_catalog_exits_two(tmp_path):
 
 def test_learn_appends_alias_once(tmp_path, capsys):
     al = tmp_path / "aliases.csv"
-    args = ["learn", "--catalog", CAT, "--aliases", str(al), "--customer", "c1", "--phrase", "lox", "--sku", "SEA-SAL-SMK"]
+    args = ["learn", "--catalog", CAT, "--aliases", str(al), "--customer", "c1",
+            "--phrase", "lox", "--sku", "SEA-SAL-SMK"]
     assert main(args) == 0 and main(args) == 0
     assert al.read_text().count("lox") == 1
     assert "already known" in capsys.readouterr().out

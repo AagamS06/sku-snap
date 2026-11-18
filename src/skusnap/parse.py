@@ -32,7 +32,11 @@ _LEAD = re.compile(rf"^(?P<x>x\s*)?(?P<qty>{_NUM})\s*(?P<x2>x\b)?\s*(?P<rest>.*)
 _TRAIL = re.compile(rf"^(?P<rest>.*?)\s*(?:x\s*|-\s*|:\s*)?(?P<qty>{_NUM})\s*(?P<unit>[a-z#]+)?\s*$", re.I)
 _SPLIT = re.compile(r"[\n;]+")
 _SUBSPLIT = re.compile(r"\s*(?:,|\band\b|&|\+)\s*(?=(?:\d|[½¼¾]|a\s|an\s|one\s|two\s|three\s|half\s|x\d))", re.I)
-_FILLER = re.compile(r"^(?:also|plus|pls|please|and|i need|we need|need|can i get|can we get|get|send|add)\b[\s,:]*", re.I)
+_FILLER = re.compile(
+    r"^(?:(?:could|can|would|will)\s+(?:you|we|i|ya|u)\s+(?:please\s+|pls\s+)?(?:send|get|add|grab|bring|do)"
+    r"|also|plus|pls|please|and|i need|we need|need|i'?d like|we'?d like|get|send|add)\b[\s,:]*",
+    re.I,
+)
 
 
 @dataclass

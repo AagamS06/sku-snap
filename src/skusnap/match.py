@@ -30,7 +30,11 @@ RULES: dict[str, tuple[str, str]] = {
     "SS014": ("review", "No unit given and the quantity looks like a pack count"),
 }
 
-STOPWORDS = {"of", "the", "some", "de", "del", "la", "el", "los", "las", "for", "pls", "please", "fresh"}
+STOPWORDS = {"of", "the", "some", "de", "del", "la", "el", "los", "las", "for", "pls", "please"}
+# Soft words describe an item but are often left out of catalog names ("fresh basil" -> "Basil Bunch").
+# In a phrase they only count when the target has them too; in a target they always count, so
+# "mozzarella" does not silently prefer "Fresh Mozzarella" over "Shredded Mozzarella".
+SOFT_WORDS = {"fresh"}
 
 
 def norm(text: str) -> str:
@@ -66,7 +70,9 @@ def score(phrase: str, target: str) -> float:
     q, c = tokens(phrase), tokens(target)
     if not q or not c:
         return 0.0
-    coverage = sum(max(_tok_sim(t, u) for u in c) for t in q) / len(q)
+    sims = [(t, max(_tok_sim(t, u) for u in c)) for t in q]
+    sims = [(t, v) for t, v in sims if v > 0 or t not in SOFT_WORDS] or sims
+    coverage = sum(v for _, v in sims) / len(sims)
     precision = sum(max(_tok_sim(u, t) for t in q) for u in c) / len(c)
     seq = SequenceMatcher(None, " ".join(q), " ".join(c)).ratio()
     return round(0.6 * coverage + 0.15 * precision + 0.25 * seq, 3)
@@ -225,7 +231,8 @@ def match_lines(parsed: list[ParsedLine], catalog: dict[str, Item], aliases: dic
             if p.qty is None and top_score < s.chatter_score:
                 ignored.append({"line_no": p.line_no, "raw": p.raw})   # greeting / sign-off
                 continue
-            ln.candidates = [{"sku": it.sku, "name": it.name, "score": sc} for sc, it in ranked[:3] if sc >= s.low_score]
+            ln.candidates = [{"sku": it.sku, "name": it.name, "score": sc}
+                             for sc, it in ranked[:3] if sc >= s.low_score]
             close = [(sc, it) for sc, it in ranked if sc >= s.low_score and top_score - sc <= s.margin]
             if top_score < s.low_score:
                 ln.flags.append(Flag("SS001", f"nothing in the catalog looks like '{phrase}'"))

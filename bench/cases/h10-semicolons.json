@@ -1,0 +1,24 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "PRD-ROM-24",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "PRD-CIL-30",
+      "qty": 1,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "DRY-EGG-LG",
+      "qty": 12,
+      "unit": "dz",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

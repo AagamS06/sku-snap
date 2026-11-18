@@ -1,0 +1,22 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": null,
+      "qty": 10,
+      "unit": null,
+      "flags": [
+        "SS002"
+      ]
+    },
+    {
+      "sku": null,
+      "qty": 2,
+      "unit": "cs",
+      "flags": [
+        "SS002"
+      ]
+    }
+  ],
+  "ignored": 0
+}

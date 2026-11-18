@@ -12,5 +12,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: pip install -e ".[dev]"
+      - run: ruff check .
       - run: python -m pytest -q
+      - run: sku-snap check-catalog --catalog examples/catalog.csv --aliases examples/aliases.csv
+      - run: sku-snap check-catalog --catalog bench/catalog.csv --aliases bench/aliases.csv
+      - run: sku-snap bench bench --min-sku-accuracy 0.97 --max-unsafe 2
       - run: sku-snap match examples/orders/luigis-text.txt --catalog examples/catalog.csv --customer luigis --aliases examples/aliases.csv --history examples/history.jsonl || test $? -eq 1

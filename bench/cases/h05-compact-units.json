@@ -1,0 +1,26 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "PRD-ROM-24",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "SEA-SHR-1620",
+      "qty": 11.023,
+      "unit": "lb",
+      "flags": [
+        "SS005"
+      ]
+    },
+    {
+      "sku": "DRY-FLR-50",
+      "qty": 6,
+      "unit": "bag",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

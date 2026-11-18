@@ -1,0 +1,14 @@
+{
+  "customer": "new-cafe",
+  "lines": [
+    {
+      "sku": null,
+      "qty": null,
+      "unit": null,
+      "flags": [
+        "SS008"
+      ]
+    }
+  ],
+  "ignored": 1
+}

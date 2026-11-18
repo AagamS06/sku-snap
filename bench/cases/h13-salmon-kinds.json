@@ -1,0 +1,26 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "SEA-SAL-ATL",
+      "qty": 10,
+      "unit": "lb",
+      "flags": []
+    },
+    {
+      "sku": "SEA-SAL-SMK",
+      "qty": 2,
+      "unit": "ea",
+      "flags": [
+        "SS012"
+      ]
+    },
+    {
+      "sku": "SEA-SAL-KNG",
+      "qty": 5,
+      "unit": "lb",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

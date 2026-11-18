@@ -1,0 +1,28 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": null,
+      "qty": 1,
+      "unit": "cs",
+      "flags": [
+        "SS001"
+      ]
+    },
+    {
+      "sku": "PRD-ROM-24",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": null,
+      "qty": 1,
+      "unit": "tray",
+      "flags": [
+        "SS001"
+      ]
+    }
+  ],
+  "ignored": 0
+}

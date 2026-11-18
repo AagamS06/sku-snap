@@ -1,0 +1,36 @@
+{
+  "customer": "tavola",
+  "lines": [
+    {
+      "sku": "PRD-TOM-ROMA",
+      "qty": 2,
+      "unit": "cs",
+      "flags": [
+        "SS013"
+      ]
+    },
+    {
+      "sku": "CHE-MOZ-FRS",
+      "qty": 6,
+      "unit": "lb",
+      "flags": [
+        "SS013"
+      ]
+    },
+    {
+      "sku": "OIL-EVOO-3L",
+      "qty": 2,
+      "unit": "ea",
+      "flags": [
+        "SS013"
+      ]
+    },
+    {
+      "sku": "PRD-LEM-115",
+      "qty": 1,
+      "unit": "cs",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

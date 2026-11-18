@@ -1,0 +1,28 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "DAI-CRM-HVY",
+      "qty": 6,
+      "unit": "ea",
+      "flags": [
+        "SS012"
+      ]
+    },
+    {
+      "sku": "DAI-MLK-WHL",
+      "qty": 2,
+      "unit": "gal",
+      "flags": []
+    },
+    {
+      "sku": "SEA-SAL-SMK",
+      "qty": 1,
+      "unit": "ea",
+      "flags": [
+        "SS012"
+      ]
+    }
+  ],
+  "ignored": 0
+}

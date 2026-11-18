@@ -26,12 +26,13 @@
 
 ## Phase 2: Hardening
 **Goal:** trustworthy on real-world messiness.
-- [ ] Anonymised benchmark set (orders + expected JSON) and a `sku-snap bench` command
+- [x] Fictional benchmark set (orders + expected JSON, dev + held-out) and a `sku-snap bench` command (v0.2.0)
 - [ ] More number/unit vocab (Spanish, Chinese, Korean, Japanese numerals via config file)
-- [ ] Catalog validator (`sku-snap check-catalog`): duplicate aliases, aliases colliding across SKUs
+- [x] Catalog validator (`sku-snap check-catalog`): CC001 to CC008 incl. duplicate aliases, aliases colliding across SKUs, dangling customer aliases (v0.2.0)
 - [ ] Configurable thresholds per catalog
-- [ ] Property-based tests for the parser
-- [ ] `ruff` lint in CI
+- [x] Seeded fuzz / property tests: 1,000 random orders, no crash, output invariants hold (v0.2.0)
+- [x] `ruff` lint in CI (v0.2.0)
+- [ ] Fix the held-out benchmark misses: `qty 2` marker, "a couple"/"a few", mixed fractions (`2 1/2`), ranges (`3-4` → SS003), Spanish unit words (bolsa)
 
 **Exit criteria:** benchmark published with per-rule precision; no crash on 1,000 fuzzed orders.
 

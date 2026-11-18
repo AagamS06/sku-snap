@@ -1,0 +1,44 @@
+{
+  "customer": "taqueria-sol",
+  "lines": [
+    {
+      "sku": "PRD-AVO-48",
+      "qty": 2,
+      "unit": "cs",
+      "flags": [
+        "SS013"
+      ]
+    },
+    {
+      "sku": "PRD-CIL-30",
+      "qty": 1,
+      "unit": "cs",
+      "flags": [
+        "SS013"
+      ]
+    },
+    {
+      "sku": "MEA-CHK-THG",
+      "qty": 40,
+      "unit": "lb",
+      "flags": [
+        "SS013"
+      ]
+    },
+    {
+      "sku": "PRD-LIM-200",
+      "qty": 1,
+      "unit": "cs",
+      "flags": [
+        "SS013"
+      ]
+    },
+    {
+      "sku": "PRD-TOM-ROMA",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

@@ -1,0 +1,28 @@
+{
+  "customer": "pho-saigon",
+  "lines": [
+    {
+      "sku": "SEA-SHR-1620",
+      "qty": 20,
+      "unit": "lb",
+      "flags": [
+        "SS013"
+      ]
+    },
+    {
+      "sku": "DRY-RCE-JAS",
+      "qty": 4,
+      "unit": "bag",
+      "flags": [
+        "SS013"
+      ]
+    },
+    {
+      "sku": "PRD-LIM-200",
+      "qty": 1,
+      "unit": "cs",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

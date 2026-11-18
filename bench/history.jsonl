@@ -1,0 +1,4 @@
+{"customer": "tavola", "date": "2026-10-30", "lines": [{"sku": "PRD-ROM-24", "qty": 2, "unit": "cs"}, {"sku": "CHE-PARM-WHL", "qty": 5, "unit": "lb"}, {"sku": "SEA-SAL-ATL", "qty": 12, "unit": "lb"}]}
+{"customer": "tavola", "date": "2026-11-03", "lines": [{"sku": "PRD-TOM-ROMA", "qty": 2, "unit": "cs"}, {"sku": "CHE-MOZ-FRS", "qty": 6, "unit": "lb"}, {"sku": "OIL-EVOO-3L", "qty": 2, "unit": "ea"}]}
+{"customer": "taqueria-sol", "date": "2026-11-06", "lines": [{"sku": "PRD-AVO-48", "qty": 2, "unit": "cs"}, {"sku": "PRD-CIL-30", "qty": 1, "unit": "cs"}, {"sku": "MEA-CHK-THG", "qty": 40, "unit": "lb"}, {"sku": "PRD-LIM-200", "qty": 1, "unit": "cs"}]}
+{"customer": "pho-saigon", "date": "2026-11-04", "lines": [{"sku": "SEA-SHR-1620", "qty": 20, "unit": "lb"}, {"sku": "DRY-RCE-JAS", "qty": 4, "unit": "bag"}]}

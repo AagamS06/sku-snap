@@ -1,0 +1,34 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "SEA-TUN-ALB",
+      "qty": 3,
+      "unit": "lb",
+      "flags": [
+        "SS012"
+      ]
+    },
+    {
+      "sku": "OIL-EVOO-3L",
+      "qty": 2,
+      "unit": "ea",
+      "flags": [
+        "SS012"
+      ]
+    },
+    {
+      "sku": "DRY-FLR-50",
+      "qty": 4,
+      "unit": "bag",
+      "flags": []
+    },
+    {
+      "sku": "SEA-SHR-1620",
+      "qty": 20,
+      "unit": "lb",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

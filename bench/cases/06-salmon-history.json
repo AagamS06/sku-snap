@@ -1,0 +1,21 @@
+{
+  "customer": "tavola",
+  "lines": [
+    {
+      "sku": "SEA-SAL-ATL",
+      "qty": 12,
+      "unit": "lb",
+      "flags": [
+        "SS011",
+        "SS012"
+      ]
+    },
+    {
+      "sku": "PRD-ROM-24",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

@@ -1,0 +1,28 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "PRD-HRB-BAS",
+      "qty": 2,
+      "unit": "bunch",
+      "flags": [
+        "SS006"
+      ]
+    },
+    {
+      "sku": "MEA-BEF-GRD",
+      "qty": 10,
+      "unit": "lb",
+      "flags": [
+        "SS006"
+      ]
+    },
+    {
+      "sku": "PRD-LEM-115",
+      "qty": 1,
+      "unit": "cs",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

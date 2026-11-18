@@ -89,3 +89,22 @@ def test_repeat_without_history_flags():
 def test_duplicate_sku():
     lines, _ = run("2 cs romaine\n1 cs romaine hearts")
     assert "SS007" in ids(lines[1])
+
+
+def test_soft_word_in_target_keeps_mozzarella_ambiguous():
+    cat = load_catalog(Path(__file__).resolve().parents[1] / "bench" / "catalog.csv")
+    (ln,), _ = match_lines(parse_order("5 lb mozzarella"), cat, {}, [])
+    assert ln.sku is None and "SS002" in ids(ln)
+    assert {c["sku"] for c in ln.candidates} >= {"CHE-MOZ-FRS", "CHE-MOZ-SHR"}
+
+
+def test_soft_word_in_phrase_still_helps():
+    cat = load_catalog(Path(__file__).resolve().parents[1] / "bench" / "catalog.csv")
+    (ln,), _ = match_lines(parse_order("5 lb fresh mozzarella"), cat, {}, [])
+    assert ln.sku == "CHE-MOZ-FRS" and not ln.needs_review
+    assert score("fresh basil", "basil") > 0.9
+
+
+def test_polite_request_is_not_chatter():
+    lines, ignored = run("Could you send 2 cs romaine")
+    assert [ln.sku for ln in lines] == ["PRD-ROM-24"] and not ignored

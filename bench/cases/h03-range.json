@@ -1,0 +1,20 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "PRD-ROM-24",
+      "qty": null,
+      "unit": "cs",
+      "flags": [
+        "SS003"
+      ]
+    },
+    {
+      "sku": "DRY-SUG-25",
+      "qty": 2,
+      "unit": "bag",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

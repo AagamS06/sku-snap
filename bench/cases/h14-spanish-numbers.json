@@ -1,0 +1,24 @@
+{
+  "customer": "taqueria-sol",
+  "lines": [
+    {
+      "sku": "PRD-AVO-48",
+      "qty": 5,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "DRY-FLR-50",
+      "qty": 3,
+      "unit": "bag",
+      "flags": []
+    },
+    {
+      "sku": "PRD-CIL-30",
+      "qty": 1,
+      "unit": "cs",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

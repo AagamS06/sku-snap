@@ -1,0 +1,31 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "PRD-ROM-24",
+      "qty": 2,
+      "unit": "cs",
+      "flags": [
+        "SS005"
+      ]
+    },
+    {
+      "sku": "PRD-ICE-24",
+      "qty": 3,
+      "unit": "cs",
+      "flags": [
+        "SS005"
+      ]
+    },
+    {
+      "sku": "PRD-AVO-48",
+      "qty": 96,
+      "unit": "cs",
+      "flags": [
+        "SS012",
+        "SS014"
+      ]
+    }
+  ],
+  "ignored": 0
+}

@@ -1,0 +1,30 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "PRD-ROM-24",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "PRD-ICE-24",
+      "qty": 1,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "DRY-RCE-JAS",
+      "qty": 4,
+      "unit": "bag",
+      "flags": []
+    },
+    {
+      "sku": "DRY-SUG-25",
+      "qty": 2,
+      "unit": "bag",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

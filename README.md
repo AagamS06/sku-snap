@@ -24,6 +24,8 @@ sku-snap is that tool. It helps **order-desk reps at small and mid-size distribu
 - **14 flag rules** (SS001 to SS014) with info vs review levels; `sku-snap rules` lists them.
 - **Outputs** a table, a stable JSON contract, or an ERP-import CSV; `--clarify` drafts the message to the customer.
 - **Learns**: `sku-snap learn` stores "this customer's phrase = this SKU".
+- **Checks your catalog** (new in v0.2.0): `sku-snap check-catalog` finds aliases shared by two SKUs, customer aliases pointing at deleted SKUs, conflicting alias rows, unknown units and duplicate names (CC001 to CC008), the things that quietly make matching worse.
+- **Measures itself** (new in v0.2.0): `sku-snap bench` scores the matcher against a labelled benchmark ([`bench/`](bench/README.md): 40 fictional orders, 123 lines) and reports SKU accuracy, **unsafe lines** (marked ok but wrong, or silently dropped) and per-rule precision/recall. CI fails if it regresses.
 - **Offline, zero runtime dependencies**, exit codes `0` clean / `1` review / `2` error.
 
 ## Launch video
@@ -44,7 +46,7 @@ Python 3.10+ standard library (`csv`, `json`, `difflib`, `unicodedata`, `argpars
 ## Getting started
 
 ```bash
-pip install "git+https://github.com/AagamS06/sku-snap.git@v0.1.0"
+pip install "git+https://github.com/AagamS06/sku-snap.git@v0.2.0"
 git clone https://github.com/AagamS06/sku-snap.git && cd sku-snap   # for the examples
 
 sku-snap match examples/orders/luigis-text.txt --catalog examples/catalog.csv \
@@ -77,7 +79,39 @@ Thanks for the order. A few quick checks before we confirm:
 Everything else is good to go.
 ```
 
-More: `--format json` (contract in [Architecture.md](Architecture.md#key-apis--integrations)), `--format csv --out order.csv` for an ERP import, `sku-snap learn ...` to remember a correction. Development: `pip install -e ".[dev]" && python -m pytest -q`.
+### Check a catalog before you use it
+
+```bash
+sku-snap check-catalog --catalog examples/catalog.csv --aliases my-aliases.csv
+```
+
+```text
+CC005  ERROR  my-aliases.csv line 3: luigis 'parm' -> CHE-PARM-GRT, but line 2 maps it to CHE-PARM-WHL (the later row wins)
+CC004  ERROR  my-aliases.csv line 4: luigis 'micro' -> PRD-MIC-01, which is not in the catalog (the alias is ignored)
+
+13 items checked: 2 error(s), 0 warning(s)
+```
+
+Exit `0` when there are no errors (warnings allowed; `--strict` fails on warnings too), `1` on errors, `2` on bad input. `--format json` for scripts.
+
+### Benchmark
+
+```bash
+sku-snap bench bench
+```
+
+```text
+sku-snap bench: 40 cases, 123 lines
+  sku accuracy     98.4%
+  line accuracy    95.9%   (sku + qty + unit + exact flags)
+  status accuracy  97.6%   (ok vs review)
+  unsafe lines     2        (marked ok but wrong or should be reviewed)
+  exact cases      35/40
+```
+
+On the **held-out** cases (written after the last fixes, never tuned against) it is 94.7% SKU accuracy with 2 unsafe lines: both are order lines dropped as chatter (`qty 2 cs iceberg`, `a couple bags of rice`). Full per-rule table, the list of misses and how to add cases: [bench/README.md](bench/README.md).
+
+More: `--format json` (contract in [Architecture.md](Architecture.md#key-apis--integrations)), `--format csv --out order.csv` for an ERP import, `sku-snap learn ...` to remember a correction. Development: `pip install -e ".[dev]" && ruff check . && python -m pytest -q`.
 
 ## Use it with Claude (skill)
 
@@ -90,16 +124,17 @@ sku-snap ships an Agent Skill so Claude (or any agent that reads skills) can run
 ## Project structure
 
 ```
-src/skusnap/   cli.py · parse.py · units.py · catalog.py · match.py · report.py
-tests/         parser, matcher and CLI contract tests
+src/skusnap/   cli.py · parse.py · units.py · catalog.py · match.py · report.py · check.py · bench.py
+tests/         parser, matcher, CLI contract, catalog checks, benchmark, seeded fuzz (1,000 orders)
 examples/      catalog.csv · aliases.csv · history.jsonl · orders/
+bench/         labelled benchmark: catalog, aliases, history, cases/*.txt + *.json
 skills/        sku-snap/SKILL.md
 docs/media/    launch video and cover
 ```
 
 ## Roadmap
 
-Phase 0 setup and Phase 1 MVP are done. Next: benchmark set, catalog validator, more number words; then a local review queue, OCR extra and ERP export profiles. Details in [Phases.md](Phases.md).
+Phase 0 setup and Phase 1 MVP are done; Phase 2 hardening is mostly done in v0.2.0 (benchmark, catalog validator, fuzz tests, lint). Next: fix the held-out misses (`qty 2`, "a couple", mixed fractions, ranges, more Spanish/Asian number and unit words) and per-catalog thresholds; then a local review queue, OCR extra and ERP export profiles. Details in [Phases.md](Phases.md).
 
 ## Docs
 

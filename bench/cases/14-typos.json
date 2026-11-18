@@ -1,0 +1,24 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "PRD-ROM-24",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "PRD-TOM-CHR",
+      "qty": 3,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "MEA-CHK-THG",
+      "qty": 5,
+      "unit": "lb",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

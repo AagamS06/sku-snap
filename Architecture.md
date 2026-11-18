@@ -45,8 +45,11 @@ sku-snap/
 │   ├── units.py         # unit vocabulary + exact conversions
 │   ├── catalog.py       # CSV / JSONL loaders, InputError, append_alias
 │   ├── match.py         # scoring, ambiguity, unit fitting, RULES
-│   └── report.py        # table, JSON, CSV, clarification draft
-├── tests/               # pytest: parser, matcher, CLI contract
+│   ├── report.py        # table, JSON, CSV, clarification draft
+│   ├── check.py         # check-catalog: CC001..CC008 catalog + alias checks
+│   └── bench.py         # bench: score against labelled cases, unsafe lines, per-rule P/R
+├── tests/               # pytest: parser, matcher, CLI contract, checks, bench, seeded fuzz
+├── bench/               # labelled benchmark (fictional): catalog, aliases, history, cases/
 ├── examples/            # catalog.csv, aliases.csv, history.jsonl, orders/*.txt
 ├── skills/sku-snap/SKILL.md   # Agent Skill for Claude
 ├── docs/media/          # launch video, cover
@@ -62,7 +65,7 @@ sku-snap/
 | Standard library only (`csv`, `json`, `difflib`, `unicodedata`, `argparse`) | `pip install` in seconds, nothing to audit, works offline. |
 | `difflib.SequenceMatcher` + token scoring | Good enough for shorthand and typos, deterministic, explainable scores. |
 | pytest (dev only) | Fast tests, parametrised parser cases. |
-| GitHub Actions | Runs the tests on 3.10 and 3.12. |
+| GitHub Actions | Runs ruff, the tests, check-catalog and the benchmark gate on 3.10 and 3.12. |
 
 ## Data model
 
@@ -78,7 +81,7 @@ Flag        id (SS001..SS014), message, level (info|review)
 
 ### Matching score
 
-For a phrase `q` and a catalog name or alias `c` (both tokenised, stopwords and digits dropped, plurals trimmed):
+For a phrase `q` and a catalog name or alias `c` (both tokenised, stopwords and digits dropped, plurals trimmed; the soft word "fresh" counts in a phrase only when the target has it too):
 
 ```
 score = 0.60 · coverage(q in c) + 0.15 · precision(c in q) + 0.25 · sequence_ratio
@@ -90,6 +93,8 @@ Token similarity is 1.0 for equal tokens, 0.9 when `c` starts with a 3+ letter `
 
 - **CLI contract**: `sku-snap match ORDER --catalog CSV [--customer ID --aliases CSV --history JSONL] [--format table|json|csv] [--out FILE] [--clarify] [--min-score N]`.
 - **JSON output**: `{tool, version, customer, status, summary{lines,ok,review,ignored}, lines[...], ignored[...]}`.
+- **check-catalog**: `sku-snap check-catalog --catalog CSV [--aliases CSV] [--format table|json] [--strict]`; JSON `{tool, version, items, errors, warnings, issues[{id, level, message}]}`; exit 0 no errors / 1 errors / 2 bad input.
+- **bench**: `sku-snap bench DIR [--cases GLOB] [--verbose] [--format table|json] [--min-sku-accuracy N] [--max-unsafe N]`; JSON `{tool, version, summary{cases, cases_exact, lines, sku_accuracy, line_accuracy, status_accuracy, unsafe_lines, missing_lines, extra_lines, chatter_mismatches, per_rule{...}}, mismatches[...]}`; exit 1 only when a threshold fails.
 - **CSV output**: `line_no,sku,qty,unit,name,status,flags,raw`, ready to map into an ERP import.
 - **Python API**: `parse_order(text)`, `match_lines(parsed, catalog, aliases, history)`, `to_json(...)`.
 - **Agent Skill**: `skills/sku-snap/SKILL.md` lets Claude run the CLI and explain results.

@@ -1,0 +1,20 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": null,
+      "qty": 5,
+      "unit": "lb",
+      "flags": [
+        "SS002"
+      ]
+    },
+    {
+      "sku": "CHE-PARM-GRT",
+      "qty": 2,
+      "unit": "bag",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

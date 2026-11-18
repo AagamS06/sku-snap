@@ -1,0 +1,46 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "PRD-ROM-24",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "SEA-SAL-KNG",
+      "qty": 15,
+      "unit": "lb",
+      "flags": []
+    },
+    {
+      "sku": "CHE-PARM-GRT",
+      "qty": 2,
+      "unit": "bag",
+      "flags": []
+    },
+    {
+      "sku": "PRD-HRB-BAS",
+      "qty": 1,
+      "unit": "bunch",
+      "flags": [
+        "SS006"
+      ]
+    },
+    {
+      "sku": "PRD-ONY-JMB",
+      "qty": 6.614,
+      "unit": "lb",
+      "flags": [
+        "SS005"
+      ]
+    },
+    {
+      "sku": "PRD-LIM-200",
+      "qty": 1,
+      "unit": "cs",
+      "flags": []
+    }
+  ],
+  "ignored": 5
+}

@@ -1,0 +1,30 @@
+{
+  "customer": "taqueria-sol",
+  "lines": [
+    {
+      "sku": "PRD-AVO-48",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "PRD-LEM-115",
+      "qty": 1,
+      "unit": "cs",
+      "flags": []
+    },
+    {
+      "sku": "MEA-CHK-BRS",
+      "qty": 10,
+      "unit": "lb",
+      "flags": []
+    },
+    {
+      "sku": "PRD-ONR-25",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

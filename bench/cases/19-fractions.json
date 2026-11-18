@@ -1,0 +1,28 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "PRD-ROM-24",
+      "qty": 0.5,
+      "unit": "cs",
+      "flags": [
+        "SS009"
+      ]
+    },
+    {
+      "sku": "PRD-LEM-115",
+      "qty": 1.5,
+      "unit": "cs",
+      "flags": [
+        "SS009"
+      ]
+    },
+    {
+      "sku": "CHE-PARM-WHL",
+      "qty": 2.5,
+      "unit": "lb",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}

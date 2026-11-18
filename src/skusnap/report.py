@@ -61,7 +61,7 @@ def to_table(lines: list[Line], ignored: list[dict], customer: str | None) -> st
                      "-" if ln.qty is None else _fmt(ln.qty), ln.unit or "-", ln.sku or "-",
                      (ln.name or ln.raw)[:34], ",".join(f.id for f in ln.flags) or "-"))
     widths = [max(len(r[i]) for r in rows) for i in range(len(rows[0]))]
-    out = ["  ".join(c.ljust(w) for c, w in zip(r, widths)).rstrip() for r in rows]
+    out = ["  ".join(c.ljust(w) for c, w in zip(r, widths, strict=True)).rstrip() for r in rows]
     review = [ln for ln in lines if ln.needs_review]
     out.append("")
     out.append(f"{len(lines)} lines, {len(lines) - len(review)} ok, {len(review)} need review"

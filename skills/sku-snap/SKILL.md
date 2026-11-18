@@ -1,6 +1,6 @@
 ---
 name: sku-snap
-description: Match a messy B2B order (a customer's text message, email, or typed-up note) against a seller's product catalog CSV and return clean order lines (SKU, quantity, selling unit) plus a review queue of lines a human must check, with a ready-to-send clarification message. Use this when someone pastes or attaches an order from a restaurant or other buyer and asks to "enter", "parse", "match", "map to SKUs", "check" or "turn into an ERP import" that order; when they ask which lines of an order are ambiguous, unknown, out of stock or in the wrong unit; when they want to repeat a customer's previous order; or when they want to teach the tool that a customer's phrase means a SKU. Runs locally with the sku-snap CLI (Python, no network).
+description: Match a messy B2B order (a customer's text message, email, or typed-up note) against a seller's product catalog CSV and return clean order lines (SKU, quantity, selling unit) plus a review queue of lines a human must check, with a ready-to-send clarification message. Use this when someone pastes or attaches an order from a restaurant or other buyer and asks to "enter", "parse", "match", "map to SKUs", "check" or "turn into an ERP import" that order; when they ask which lines of an order are ambiguous, unknown, out of stock or in the wrong unit; when they want to repeat a customer's previous order; when they want to teach the tool that a customer's phrase means a SKU; or when they want to check a catalog or aliases file for problems before using it. Runs locally with the sku-snap CLI (Python, no network).
 ---
 
 # sku-snap
@@ -10,8 +10,8 @@ Turns free-text orders into catalog-matched lines and flags what needs a human. 
 ## 1. Install
 
 ```bash
-pip install "git+https://github.com/AagamS06/sku-snap.git@v0.1.0"
-sku-snap --version        # sku-snap 0.1.0
+pip install "git+https://github.com/AagamS06/sku-snap.git@v0.2.0"
+sku-snap --version        # sku-snap 0.2.0
 ```
 
 Requires Python 3.10+. No other dependencies. If `pip` is unavailable, clone the repo and run `PYTHONPATH=src python -m skusnap ...`.
@@ -57,8 +57,13 @@ sku-snap match ORDER.txt --catalog catalog.csv \
   [--format table|json|csv] [--out FILE] [--clarify] [--min-score 0.72]
 
 sku-snap learn --catalog catalog.csv --aliases aliases.csv --customer ID --phrase "parm" --sku CHE-PARM-WHL
-sku-snap rules            # list flag ids
+sku-snap check-catalog --catalog catalog.csv [--aliases aliases.csv] [--format table|json] [--strict]
+sku-snap bench DIR [--cases GLOB] [--verbose] [--format table|json] [--min-sku-accuracy 0.97] [--max-unsafe 2]
+sku-snap rules            # list flag ids (SS...) and catalog check ids (CC...)
 ```
+
+- **Before the first match on a new catalog**, run `check-catalog` (with `--aliases` if there is one) and tell the user about any ERROR lines: they make matching silently worse. Exit `0` no errors (warnings allowed), `1` errors found (`--strict`: warnings too), `2` bad input.
+- `bench` is for people changing sku-snap or tuning a catalog: it scores matching against a labelled folder (the repo ships one in `bench/`). Exit `1` only when a `--min-sku-accuracy` / `--max-unsafe` threshold fails.
 
 - Use `--format json` when you will read the result yourself; show the user the table or a summary.
 - `--clarify` adds a draft message to the customer about review lines (stdout for table, stderr for json/csv).
@@ -107,6 +112,19 @@ Lead with the summary (`6 ok, 3 need review`), then list each review line with i
 | SS013 | info | line copied from a previous order | name the order date |
 | SS014 | review | bare count looks like pack units ("120 eggs") | ask which unit was meant |
 
+Catalog checks (from `check-catalog`):
+
+| id | level | meaning |
+|---|---|---|
+| CC001 | error | one catalog alias on several SKUs (it can never match exactly) |
+| CC002 | warn | an alias equals another SKU's name |
+| CC003 | warn | alias repeated on one SKU, or equal to its own name |
+| CC004 | error | customer alias points at a SKU not in the catalog (ignored by `match`) |
+| CC005 | error | one customer phrase mapped to two SKUs (the later row wins) |
+| CC006 | warn | `pack_size` without `pack_unit`, or the reverse |
+| CC007 | warn | unit not recognised, so conversions will not work |
+| CC008 | warn | two SKUs share a name |
+
 `match_source` says how a SKU was chosen: `customer-alias`, `catalog-alias`, `fuzzy` (see `score`, 0 to 1), or `history`. When the user confirms a correction, offer to run `sku-snap learn` so it sticks for that customer.
 
 ## 5. Boundaries
@@ -116,4 +134,5 @@ Lead with the summary (`6 ok, 3 need review`), then list each review line with i
 - Do not invent catalog rows, prices, stock levels or customer history.
 - Keep order and catalog data local; do not paste it into web tools or other services.
 - No pricing, credit, delivery or legal advice; that is out of scope.
+- Known weak spots (measured in `bench/`, being fixed): lines like `qty 2 cs iceberg` or `a couple bags of rice` can be dropped as chatter, `2 1/2` reads as 2, `3-4 cs` reads as 3. If an order has those, check the line count against the message and mention it.
 - Roadmap only (not available yet): photo/PDF/OCR input, web review queue, ERP export profiles, substitutions, LLM fallback. Say so if asked.

@@ -15,6 +15,10 @@ from skusnap.parse import parse_order, parse_segment
     ("also need parm", None, None, "parm"),
     ("3 kg yellow onions", 3, "kg", "yellow onions"),
     ("1/2 cs lemons", 0.5, "cs", "lemons"),
+    ("Could you send 2 cs romaine", 2, "cs", "romaine"),
+    ("can u pls get 3 bags flour", 3, "bag", "flour"),
+    ("I'd like 2 cs lemons", 2, "cs", "lemons"),
+    ("Could you call me", None, None, "Could you call me"),
 ])
 def test_parse_segment(text, qty, unit, phrase):
     q, u, p = parse_segment(text)

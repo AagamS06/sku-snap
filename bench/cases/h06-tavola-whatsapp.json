@@ -1,0 +1,26 @@
+{
+  "customer": "tavola",
+  "lines": [
+    {
+      "sku": "CHE-MOZ-FRS",
+      "qty": 8,
+      "unit": "lb",
+      "flags": []
+    },
+    {
+      "sku": "CHE-PARM-WHL",
+      "qty": 2,
+      "unit": "lb",
+      "flags": [
+        "SS012"
+      ]
+    },
+    {
+      "sku": "PRD-TOM-ROMA",
+      "qty": 2,
+      "unit": "cs",
+      "flags": []
+    }
+  ],
+  "ignored": 2
+}

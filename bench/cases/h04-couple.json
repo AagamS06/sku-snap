@@ -1,0 +1,18 @@
+{
+  "customer": null,
+  "lines": [
+    {
+      "sku": "DRY-RCE-JAS",
+      "qty": 2,
+      "unit": "bag",
+      "flags": []
+    },
+    {
+      "sku": "PRD-AVO-48",
+      "qty": 1,
+      "unit": "cs",
+      "flags": []
+    }
+  ],
+  "ignored": 0
+}
